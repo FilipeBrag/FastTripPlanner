@@ -47,6 +47,22 @@ class SegundaTelaActivity : AppCompatActivity() {
         btnCalcular = findViewById<Button>(R.id.btnCalcular)
         btnVoltar = findViewById<Button>(R.id.btnVoltar)
 
+    }
 
+    fun calcular(){
+        var custoBase: Double = numeroDias*orcamento;
+
+        val hospedagem = when (rdHospedagem.checkedRadioButtonId){
+            R.id.rbEconomica -> 1.0
+            R.id.rbConforto -> 1.5
+            R.id.rbLuxo -> 2.2
+            else -> 1.0
+        }
+        custoBase *= hospedagem;
+        if(cbTransporte.isChecked) custoBase += 300.0;
+        if(cbAlimentacao.isChecked) custoBase += (50.0*numeroDias)
+        if(cbPasseio.isChecked) custoBase += (120.0*numeroDias)
+
+        return custoBase;
     }
 }
