@@ -28,7 +28,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Opções de viagem"
-        tools:layout_editor_absoluteY="152dp" />
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="116dp" />
 
     <CheckBox
         android:id="@+id/cbTransporte"
@@ -43,8 +44,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Alimentação"
-        tools:layout_editor_absoluteX="63dp"
-        tools:layout_editor_absoluteY="390dp" />
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="388dp" />
 
     <CheckBox
         android:id="@+id/cbPasseio"
