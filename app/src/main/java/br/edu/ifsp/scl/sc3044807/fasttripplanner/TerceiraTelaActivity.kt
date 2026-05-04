@@ -17,6 +17,17 @@ class TerceiraTelaActivity : AppCompatActivity() {
             insets
         }
 
+        val numeroDias = intent.getIntExtra("Dias",0)
+        val orcamento = intent.getDoubleExtra("Orçamento",0.0)
+        val destino = intent.getStringExtra("Destino")
+        val valorFinal = intent.getDoubleExtra("Valor Final",0.0)
+        val classificacaoHospedagem = intent.getStringExtra("Hospedagem")
+        val passeios = intent.getBooleanExtra("Passeios",false)
+        val alimentacao = intent.getBooleanExtra("Alimentação",false)
+        val transporte = intent.getBooleanExtra("Transporte",false)
+
+
+
 
     }
 }
