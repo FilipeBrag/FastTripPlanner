@@ -21,13 +21,11 @@ class SegundaTelaActivity : AppCompatActivity() {
     private lateinit var cbAlimentacao: CheckBox
     private lateinit var cbPasseio: CheckBox
 
-    private lateinit var rdHospedagem: RadioGroup
-
     private lateinit var tvHospedagem: TextView
+    private lateinit var rdHospedagem: RadioGroup
 
     private lateinit var btnCalcular: Button
     private lateinit var btnVoltar: Button
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
