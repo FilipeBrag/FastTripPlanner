@@ -11,71 +11,82 @@
         android:id="@+id/tvTitulo3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="47dp"
         android:text="Resumo da Viagem"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="47dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnReiniciar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="68dp"
         android:text="Reiniciar"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="615dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvDestino"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="172dp"
-        tools:layout_editor_absoluteY="129dp" />
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="63dp"
+        app:layout_constraintStart_toStartOf="@+id/tvTitulo3"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitulo3" />
 
     <TextView
         android:id="@+id/tvDias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="266dp"
-        tools:layout_editor_absoluteY="209dp" />
+        android:layout_marginTop="61dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvTitulo3"
+        app:layout_constraintTop_toBottomOf="@+id/tvDestino" />
 
     <TextView
         android:id="@+id/tvTipoHospedagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="209dp" />
+        android:layout_marginBottom="49dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvTransportes"
+        app:layout_constraintStart_toStartOf="@+id/tvTransportes" />
 
     <TextView
         android:id="@+id/tvTransportes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="277dp" />
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="45dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvAlimentacao"
+        app:layout_constraintEnd_toEndOf="@+id/tvAlimentacao" />
 
     <TextView
         android:id="@+id/tvAlimentacao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="86dp"
-        tools:layout_editor_absoluteY="341dp" />
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="44dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvPasseio"
+        app:layout_constraintStart_toStartOf="@+id/tvPasseio" />
 
     <TextView
         android:id="@+id/tvPasseio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="404dp" />
+        android:layout_marginStart="84dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginBottom="308dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvValorFinal"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvValorFinal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="169dp"
-        tools:layout_editor_absoluteY="489dp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="66dp"
+        app:layout_constraintStart_toStartOf="@+id/btnReiniciar"
+        app:layout_constraintTop_toBottomOf="@+id/tvPasseio" />
 </androidx.constraintlayout.widget.ConstraintLayout>

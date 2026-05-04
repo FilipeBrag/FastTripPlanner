@@ -36,6 +36,14 @@ class TerceiraTelaActivity : AppCompatActivity() {
         val tvTransporte = findViewById<TextView>(R.id.tvTransportes)
         val tvAlimentacao = findViewById<TextView>(R.id.tvAlimentacao)
 
+        tvDias.text = "Duração: $numeroDias dias"
+        tvDestino.text = "Destino: $destino"
+        tvHospedagem.text = "Tipo de Hospedagem: $classificacaoHospedagem"
+        tvValorFinal.text = "Total: R$$valorFinal"
+        tvTransporte.text = "Transporte: $transporte"
+        tvAlimentacao.text = "Alimentação: $alimentacao"
+        tvPasseios.text = "Passeios: $passeios"
+
         val btnReiniciar = findViewById<Button>(R.id.btnReiniciar)
 
 
