@@ -71,6 +71,24 @@ class SegundaTelaActivity : AppCompatActivity() {
 
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        outState.putInt("TipoHospedagem", rdHospedagem.checkedRadioButtonId)
+        outState.putBoolean("Transporte", cbTransporte.isChecked)
+        outState.putBoolean("Alimentação", cbAlimentacao.isChecked)
+        outState.putBoolean("Passeios", cbPasseio.isChecked)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+
+        rdHospedagem.check(savedInstanceState.getInt("TipoHospedagem"))
+        cbTransporte.isChecked = savedInstanceState.getBoolean("Transporte")
+        cbAlimentacao.isChecked = savedInstanceState.getBoolean("Alimentação")
+        cbPasseio.isChecked = savedInstanceState.getBoolean("Passeios")
+    }
+
     fun calcular(): Double {
         var custoBase: Double = numeroDias*orcamento;
 
