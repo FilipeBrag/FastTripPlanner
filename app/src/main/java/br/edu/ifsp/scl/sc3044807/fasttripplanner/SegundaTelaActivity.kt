@@ -56,7 +56,7 @@ class SegundaTelaActivity : AppCompatActivity() {
                 putExtra("Destino", destino)
                 putExtra("Hospedagem",rdHospedagem.checkedRadioButtonId)
                 putExtra("Transporte",cbTransporte.isChecked)
-                putExtra("Alimentção",cbTransporte.isChecked)
+                putExtra("Alimentação",cbTransporte.isChecked)
                 putExtra("Passeios", cbPasseio.isChecked)
             }
             startActivity(intent)

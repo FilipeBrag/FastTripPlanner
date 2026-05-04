@@ -1,6 +1,8 @@
 package br.edu.ifsp.scl.sc3044807.fasttripplanner
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -26,7 +28,21 @@ class TerceiraTelaActivity : AppCompatActivity() {
         val alimentacao = intent.getBooleanExtra("Alimentação",false)
         val transporte = intent.getBooleanExtra("Transporte",false)
 
+        val tvDias = findViewById<TextView>(R.id.tvDias)
+        val tvDestino = findViewById<TextView>(R.id.tvDestino)
+        val tvValorFinal = findViewById<TextView>(R.id.tvValorFinal)
+        val tvHospedagem = findViewById<TextView>(R.id.tvTipoHospedagem)
+        val tvPasseios = findViewById<TextView>(R.id.tvPasseio)
+        val tvTransporte = findViewById<TextView>(R.id.tvTransportes)
+        val tvAlimentacao = findViewById<TextView>(R.id.tvAlimentacao)
 
+        val btnReiniciar = findViewById<Button>(R.id.btnReiniciar)
+
+
+
+        btnReiniciar.setOnClickListener {
+
+        }
 
 
     }
