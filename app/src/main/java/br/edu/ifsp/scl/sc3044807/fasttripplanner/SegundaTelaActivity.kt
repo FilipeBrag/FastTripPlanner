@@ -36,7 +36,7 @@ class SegundaTelaActivity : AppCompatActivity() {
 
         numeroDias = intent.getIntExtra("Dias",0)
         orcamento = intent.getDoubleExtra("Orçamento",0.0)
-        destino = intent.getStringExtra("Destino")
+        destino = intent.getStringExtra("Destino").toString()
 
         cbTransporte = findViewById<CheckBox>(R.id.cbTransporte)
         cbPasseio = findViewById<CheckBox>(R.id.cbPasseio)
@@ -56,11 +56,12 @@ class SegundaTelaActivity : AppCompatActivity() {
                 putExtra("Dias",numeroDias)
                 putExtra("Orçamento",orcamento)
                 putExtra("Destino", destino)
-                putExtra("Hospedagem",rdHospedagem)
-                putExtra("Transporte",cbTransporte)
-                putExtra("Alimentção",cbTransporte)
-                putExtra("Passeios", cbPasseio)
+                putExtra("Hospedagem",rdHospedagem.checkedRadioButtonId)
+                putExtra("Transporte",cbTransporte.isChecked)
+                putExtra("Alimentção",cbTransporte.isChecked)
+                putExtra("Passeios", cbPasseio.isChecked)
             }
+            startActivity(intent)
         }
 
         btnVoltar.setOnClickListener { finish() }
