@@ -7,14 +7,21 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class SegundaTelaActivity : AppCompatActivity() {
+
+    private var numeroDias: Int = 0
+    private var destino: String = ""
+    private var orcamento: Double = 0.0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_segunda_tela)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+
+        numeroDias = intent.getIntExtra("Dias",0)
+        orcamento = intent.getDoubleExtra("Orçamento",0.0)
+        destino = intent.getStringExtra("Destino")
+
+
+
     }
 }
