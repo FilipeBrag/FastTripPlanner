@@ -41,9 +41,9 @@ class TerceiraTelaActivity : AppCompatActivity() {
         tvDestino.text = "Destino: $destino"
         tvHospedagem.text = "Tipo de Hospedagem: $classificacaoHospedagem"
         tvValorFinal.text = "Total: R$$valorFinal"
-        tvTransporte.text = "Transporte: $transporte"
-        tvAlimentacao.text = "Alimentação: $alimentacao"
-        tvPasseios.text = "Passeios: $passeios"
+        tvTransporte.text = "Transporte: ${if (transporte) "Incluso" else "Não selecionado"}"
+        tvAlimentacao.text = "Alimentação: ${if (alimentacao) "Incluso" else "Não selecionado"}"
+        tvPasseios.text = "Passeios: ${if (passeios) "Incluso" else "Não selecionado"}"
 
         val btnReiniciar = findViewById<Button>(R.id.btnReiniciar)
 
