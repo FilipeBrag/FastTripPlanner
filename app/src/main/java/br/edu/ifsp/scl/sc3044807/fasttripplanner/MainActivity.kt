@@ -4,28 +4,57 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var etDestino: EditText
+    private lateinit var etNumDias: EditText
+    private lateinit var etOrcament: EditText
+    private lateinit var bntAvancar: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        val etDestino = findViewById<EditText>(R.id.etDestino)
-        val etNumDias = findViewById<EditText>(R.id.etDias)
-        val etOrcament = findViewById<EditText>(R.id.etOrcamento)
-        val bntAvancar = findViewById<Button>(R.id.buttonAvancar)
+        etDestino = findViewById<EditText>(R.id.etDestino)
+        etNumDias = findViewById<EditText>(R.id.etDias)
+        etOrcament = findViewById<EditText>(R.id.etOrcamento)
+        bntAvancar = findViewById<Button>(R.id.buttonAvancar)
 
         bntAvancar.setOnClickListener {
-            val destino = etDestino.text.toString();
-            val dias = etNumDias.text.toString();
-            val orcamento = etOrcament.text.toString();
+            verificarCampos()
+        }
+    }
 
-            if(destino.isNotEmpty() && dias.isNotEmpty() && orcamento.isNotEmpty()){
+    fun verificarCampos(){
+
+        val destino = etDestino.text.toString()
+        val dias = etNumDias.text.toString()
+        val orcamento = etOrcament.text.toString()
+
+        when {
+            destino.isEmpty() -> {
+                Toast.makeText(this, "Informe o destino", Toast.LENGTH_SHORT).show()
+            }
+            dias.isEmpty() -> {
+                Toast.makeText(this, "Informe o número de dias", Toast.LENGTH_SHORT).show()
+            }
+            orcamento.isEmpty() -> {
+                Toast.makeText(this, "Informe o orçamento", Toast.LENGTH_SHORT).show()
+            }
+            dias.toInt() <= 0 -> {
+                Toast.makeText(this, "Número de dias deve ser maior que zero", Toast.LENGTH_SHORT).show()
+            }
+            orcamento.toDouble() <= 0 -> {
+                Toast.makeText(this, "Orçamento deve ser maior que zero", Toast.LENGTH_SHORT).show()
+            }
+            else -> {
                 val intent = Intent(this, SegundaTelaActivity::class.java).apply {
                     putExtra("Destino", destino);
                     putExtra("Dias", dias.toInt());
@@ -34,5 +63,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+
     }
+
 }
