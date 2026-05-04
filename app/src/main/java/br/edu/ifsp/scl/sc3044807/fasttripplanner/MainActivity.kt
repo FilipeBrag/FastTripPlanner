@@ -32,8 +32,6 @@ class MainActivity : AppCompatActivity() {
                     putExtra("Orçamento", orcamento.toDouble());
                 }
                 startActivity(intent)
-
-
             }
         }
     }
