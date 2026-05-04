@@ -22,4 +22,37 @@
         android:text="Voltar"
         tools:layout_editor_absoluteX="81dp"
         tools:layout_editor_absoluteY="609dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="74dp" />
+
+    <CheckBox
+        android:id="@+id/cbTransporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transporte"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="290dp" />
+
+    <CheckBox
+        android:id="@+id/cbAlimentacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alimentação"
+        tools:layout_editor_absoluteX="73dp"
+        tools:layout_editor_absoluteY="377dp" />
+
+    <CheckBox
+        android:id="@+id/cbPasseio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Passeios"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="475dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
