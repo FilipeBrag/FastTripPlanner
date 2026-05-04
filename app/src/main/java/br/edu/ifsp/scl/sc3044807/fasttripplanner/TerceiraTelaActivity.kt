@@ -36,9 +36,11 @@ class TerceiraTelaActivity : AppCompatActivity() {
         val tvPasseios = findViewById<TextView>(R.id.tvPasseio)
         val tvTransporte = findViewById<TextView>(R.id.tvTransportes)
         val tvAlimentacao = findViewById<TextView>(R.id.tvAlimentacao)
+        val tvOrcamento = findViewById<TextView>(R.id.tvOrcamento)
 
         tvDias.text = "Duração: $numeroDias dias"
         tvDestino.text = "Destino: $destino"
+        tvOrcamento.text = "Orçamento: $orcamento"
         tvHospedagem.text = "Tipo de Hospedagem: $classificacaoHospedagem"
         tvValorFinal.text = "Total: R$$valorFinal"
         tvTransporte.text = "Transporte: ${if (transporte) "Incluso" else "Não selecionado"}"

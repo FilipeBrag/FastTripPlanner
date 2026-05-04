@@ -9,8 +9,6 @@ import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class SegundaTelaActivity : AppCompatActivity() {
 
@@ -48,7 +46,7 @@ class SegundaTelaActivity : AppCompatActivity() {
         btnVoltar = findViewById<Button>(R.id.btnVoltar)
 
         btnCalcular.setOnClickListener {
-            var valorFinal = calcular()
+            val valorFinal = calcular()
 
             val selectedId = rdHospedagem.checkedRadioButtonId
             val selectValue = findViewById<RadioButton>(selectedId)

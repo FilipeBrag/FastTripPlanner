@@ -40,7 +40,7 @@
         android:id="@+id/tvDias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="61dp"
+        android:layout_marginTop="62dp"
         app:layout_constraintEnd_toEndOf="@+id/tvTitulo3"
         app:layout_constraintTop_toBottomOf="@+id/tvDestino" />
 
@@ -48,45 +48,59 @@
         android:id="@+id/tvTipoHospedagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="49dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvTransportes"
-        app:layout_constraintStart_toStartOf="@+id/tvTransportes" />
+        android:layout_marginStart="86dp"
+        android:layout_marginEnd="87dp"
+        android:layout_marginBottom="34dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintEnd_toStartOf="@+id/tvDestino"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvTransportes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="45dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvAlimentacao"
-        app:layout_constraintEnd_toEndOf="@+id/tvAlimentacao" />
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <TextView
         android:id="@+id/tvAlimentacao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginBottom="44dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvPasseio"
-        app:layout_constraintStart_toStartOf="@+id/tvPasseio" />
+        android:layout_width="1dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPasseio"
+        app:layout_constraintEnd_toEndOf="@+id/textView12"
+        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/tvTransportes" />
 
     <TextView
         android:id="@+id/tvPasseio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginEnd="85dp"
-        android:layout_marginBottom="308dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tvValorFinal"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="207dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="208dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnReiniciar"
+        app:layout_constraintEnd_toStartOf="@+id/tvAlimentacao"
+        app:layout_constraintTop_toBottomOf="@+id/tvTipoHospedagem" />
 
     <TextView
         android:id="@+id/tvValorFinal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="66dp"
-        app:layout_constraintStart_toStartOf="@+id/btnReiniciar"
-        app:layout_constraintTop_toBottomOf="@+id/tvPasseio" />
+        android:layout_marginBottom="75dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnReiniciar"
+        app:layout_constraintStart_toStartOf="@+id/btnReiniciar" />
+
+    <TextView
+        android:id="@+id/tvOrcamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="263dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvTipoHospedagem"
+        app:layout_constraintStart_toStartOf="@+id/tvTipoHospedagem"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
