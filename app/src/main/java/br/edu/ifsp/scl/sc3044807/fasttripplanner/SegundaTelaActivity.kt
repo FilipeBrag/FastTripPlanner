@@ -31,6 +31,7 @@ class SegundaTelaActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_segunda_tela)
 
+        //Recebe os dados da tela anterior
         numeroDias = intent.getIntExtra("Dias",0)
         orcamento = intent.getDoubleExtra("Orçamento",0.0)
         destino = intent.getStringExtra("Destino").toString()
@@ -45,6 +46,7 @@ class SegundaTelaActivity : AppCompatActivity() {
         btnCalcular = findViewById<Button>(R.id.btnCalcular)
         btnVoltar = findViewById<Button>(R.id.btnVoltar)
 
+        //Botão calcular que chama a função calcular, posteriormente busca o texto da opção em hospedagem e cria a intent
         btnCalcular.setOnClickListener {
             val valorFinal = calcular()
 
@@ -52,6 +54,7 @@ class SegundaTelaActivity : AppCompatActivity() {
             val selectValue = findViewById<RadioButton>(selectedId)
             val nomeHospedagem = selectValue?.text?.toString() ?: "Economica"
 
+            //Intent que vai passar os dados para a proxima tela, envia todos os dados previos e o valor final
             val intent = Intent(this, TerceiraTelaActivity::class.java).apply {
                 putExtra("Valor Final",valorFinal)
                 putExtra("Dias",numeroDias)
@@ -65,10 +68,12 @@ class SegundaTelaActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //Botão que finaliza essa tela e volta para a anterior
         btnVoltar.setOnClickListener { finish() }
 
     }
 
+    //Função para salvar uma instancia previa
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
 
@@ -78,6 +83,7 @@ class SegundaTelaActivity : AppCompatActivity() {
         outState.putBoolean("Passeios", cbPasseio.isChecked)
     }
 
+    //Função para atribuir os dados quando/se a página for recarregada
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
 
@@ -87,15 +93,18 @@ class SegundaTelaActivity : AppCompatActivity() {
         cbPasseio.isChecked = savedInstanceState.getBoolean("Passeios")
     }
 
+    //Função que usa a logica fornecida no slide, e retorna o valor final quando chamada
     fun calcular(): Double {
         var custoBase: Double = numeroDias*orcamento;
 
+        //Verifica qual é o tipo de hospedagem e fornece o valor referente
         val hospedagem = when (rdHospedagem.checkedRadioButtonId){
             R.id.rbEconomica -> 1.0
             R.id.rbConforto -> 1.5
             R.id.rbLuxo -> 2.2
             else -> 1.0
         }
+
         custoBase *= hospedagem;
         if(cbTransporte.isChecked) custoBase += 300.0;
         if(cbAlimentacao.isChecked) custoBase += (50.0*numeroDias)

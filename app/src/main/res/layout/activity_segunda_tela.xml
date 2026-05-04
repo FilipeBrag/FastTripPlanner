@@ -11,111 +11,96 @@
         android:id="@+id/btnCalcular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="58dp"
-        android:layout_marginBottom="76dp"
         android:text="Calcular"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        tools:layout_editor_absoluteX="253dp"
+        tools:layout_editor_absoluteY="607dp" />
 
     <Button
         android:id="@+id/btnVoltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="81dp"
-        android:layout_marginBottom="73dp"
         android:text="Voltar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="610dp" />
 
     <TextView
         android:id="@+id/tvTitulo2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="90dp"
         android:text="Opções de viagem"
-        app:layout_constraintStart_toEndOf="@+id/rbEconomica"
-        app:layout_constraintTop_toBottomOf="@+id/tvHospedagem" />
+        tools:layout_editor_absoluteY="152dp" />
 
     <CheckBox
         android:id="@+id/cbTransporte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="42dp"
         android:text="Transporte"
-        app:layout_constraintStart_toStartOf="@+id/rbEconomica"
-        app:layout_constraintTop_toBottomOf="@+id/rbEconomica" />
+        tools:layout_editor_absoluteX="63dp"
+        tools:layout_editor_absoluteY="311dp" />
 
     <CheckBox
         android:id="@+id/cbAlimentacao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="39dp"
         android:text="Alimentação"
-        app:layout_constraintStart_toStartOf="@+id/cbTransporte"
-        app:layout_constraintTop_toBottomOf="@+id/cbTransporte" />
+        tools:layout_editor_absoluteX="63dp"
+        tools:layout_editor_absoluteY="390dp" />
 
     <CheckBox
         android:id="@+id/cbPasseio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="23dp"
         android:text="Passeios"
-        app:layout_constraintEnd_toEndOf="@+id/cbAlimentacao"
-        app:layout_constraintTop_toBottomOf="@+id/cbAlimentacao" />
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="471dp" />
 
     <RadioGroup
         android:id="@+id/rdHospedagem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvTitulo2"
-        app:layout_constraintStart_toStartOf="@+id/tvTitulo2"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitulo2" />
+        android:layout_width="360dp"
+        android:layout_height="79dp"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="189dp">
 
-    <RadioButton
-        android:id="@+id/rbEconomica"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginEnd="21dp"
-        android:text="Econômica"
-        app:layout_constraintBaseline_toBaselineOf="@+id/rbConforto"
-        app:layout_constraintEnd_toStartOf="@+id/rbConforto"
-        app:layout_constraintStart_toStartOf="parent" />
+        <RadioButton
+            android:id="@+id/rbEconomica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="39dp"
+            android:layout_marginEnd="21dp"
+            android:text="Econômica"
+            app:layout_constraintBaseline_toBaselineOf="@+id/rbConforto"
+            app:layout_constraintEnd_toStartOf="@+id/rbConforto"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <RadioButton
-        android:id="@+id/rbConforto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:text="Conforto"
-        app:layout_constraintEnd_toStartOf="@+id/rbLuxo"
-        app:layout_constraintStart_toEndOf="@+id/rbEconomica"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitulo2" />
+        <RadioButton
+            android:id="@+id/rbConforto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:text="Conforto"
+            app:layout_constraintEnd_toStartOf="@+id/rbLuxo"
+            app:layout_constraintStart_toEndOf="@+id/rbEconomica"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitulo2" />
 
-    <RadioButton
-        android:id="@+id/rbLuxo"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="41dp"
-        android:text="Luxo"
-        app:layout_constraintBaseline_toBaselineOf="@+id/rbConforto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/rbConforto" />
+        <RadioButton
+            android:id="@+id/rbLuxo"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="41dp"
+            android:text="Luxo"
+            app:layout_constraintBaseline_toBaselineOf="@+id/rbConforto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/rbConforto" />
+
+    </RadioGroup>
 
     <TextView
         android:id="@+id/tvHospedagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="43dp"
         android:text="Opções de Hospedagem"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="129dp"
+        tools:layout_editor_absoluteY="43dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

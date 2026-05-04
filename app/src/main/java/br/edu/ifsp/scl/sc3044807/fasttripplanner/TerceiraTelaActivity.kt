@@ -20,6 +20,7 @@ class TerceiraTelaActivity : AppCompatActivity() {
             insets
         }
 
+        //Recebe os valores da tela anterior
         val numeroDias = intent.getIntExtra("Dias",0)
         val orcamento = intent.getDoubleExtra("Orçamento",0.0)
         val destino = intent.getStringExtra("Destino")
@@ -29,6 +30,7 @@ class TerceiraTelaActivity : AppCompatActivity() {
         val alimentacao = intent.getBooleanExtra("Alimentação",false)
         val transporte = intent.getBooleanExtra("Transporte",false)
 
+        //Conecta os textViews com as variaveis do codigo
         val tvDias = findViewById<TextView>(R.id.tvDias)
         val tvDestino = findViewById<TextView>(R.id.tvDestino)
         val tvValorFinal = findViewById<TextView>(R.id.tvValorFinal)
@@ -37,7 +39,9 @@ class TerceiraTelaActivity : AppCompatActivity() {
         val tvTransporte = findViewById<TextView>(R.id.tvTransportes)
         val tvAlimentacao = findViewById<TextView>(R.id.tvAlimentacao)
         val tvOrcamento = findViewById<TextView>(R.id.tvOrcamento)
+        val btnReiniciar = findViewById<Button>(R.id.btnReiniciar)
 
+        //Passa os valores recebidos para as variaveis linkadas com XML para que possa ser mostrado
         tvDias.text = "Duração: $numeroDias dias"
         tvDestino.text = "Destino: $destino"
         tvOrcamento.text = "Orçamento: $orcamento"
@@ -47,8 +51,7 @@ class TerceiraTelaActivity : AppCompatActivity() {
         tvAlimentacao.text = "Alimentação: ${if (alimentacao) "Incluso" else "Não selecionado"}"
         tvPasseios.text = "Passeios: ${if (passeios) "Incluso" else "Não selecionado"}"
 
-        val btnReiniciar = findViewById<Button>(R.id.btnReiniciar)
-
+        //Botão que enviar um intent vazia, voltando a pagina inicial sem nenhum tipo de dado
         btnReiniciar.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK

@@ -25,11 +25,13 @@ class MainActivity : AppCompatActivity() {
         etOrcament = findViewById<EditText>(R.id.etOrcamento)
         bntAvancar = findViewById<Button>(R.id.buttonAvancar)
 
+        //Botom de avançar que ao ser clickado, deve chamar a função de verificar campos
         bntAvancar.setOnClickListener {
             verificarCampos()
         }
     }
 
+    //Função para salvar uma instancia previa
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
 
@@ -39,6 +41,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    //Função para atribuir os dados quando/se a página for recarregada
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
 
@@ -47,7 +50,7 @@ class MainActivity : AppCompatActivity() {
         etNumDias.setText(savedInstanceState.getString("Dias"))
     }
 
-
+    /* Valida as informações recebidas por conter ou não um valor ou se o valor é inválido */
     fun verificarCampos(){
 
         val destino = etDestino.text.toString()
@@ -71,6 +74,9 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Orçamento deve ser maior que zero", Toast.LENGTH_SHORT).show()
             }
             else -> {
+
+                //Cria a intent após ele não cair em nenhum tipo de erro, ela passa os 3 valores presentes
+
                 val intent = Intent(this, SegundaTelaActivity::class.java).apply {
                     putExtra("Destino", destino);
                     putExtra("Dias", dias.toInt());
