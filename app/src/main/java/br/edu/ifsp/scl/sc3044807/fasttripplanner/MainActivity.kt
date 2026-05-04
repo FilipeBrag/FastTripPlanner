@@ -7,8 +7,6 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,6 +29,24 @@ class MainActivity : AppCompatActivity() {
             verificarCampos()
         }
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        outState.putString("Destino", etDestino.text.toString())
+        outState.putString("Orçamento", etOrcament.text.toString())
+        outState.putString("Dias", etNumDias.text.toString())
+
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+
+        etDestino.setText(savedInstanceState.getString("Destino"))
+        etOrcament.setText(savedInstanceState.getString("Orçamento"))
+        etNumDias.setText(savedInstanceState.getString("Dias"))
+    }
+
 
     fun verificarCampos(){
 
