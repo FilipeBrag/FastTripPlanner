@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
+import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -49,12 +50,16 @@ class SegundaTelaActivity : AppCompatActivity() {
         btnCalcular.setOnClickListener {
             var valorFinal = calcular()
 
+            val selectedId = rdHospedagem.checkedRadioButtonId
+            val selectValue = findViewById<RadioButton>(selectedId)
+            val nomeHospedagem = selectValue?.text?.toString() ?: "Economica"
+
             val intent = Intent(this, TerceiraTelaActivity::class.java).apply {
                 putExtra("Valor Final",valorFinal)
                 putExtra("Dias",numeroDias)
                 putExtra("Orçamento",orcamento)
                 putExtra("Destino", destino)
-                putExtra("Hospedagem",rdHospedagem.checkedRadioButtonId)
+                putExtra("Hospedagem",nomeHospedagem)
                 putExtra("Transporte",cbTransporte.isChecked)
                 putExtra("Alimentação",cbTransporte.isChecked)
                 putExtra("Passeios", cbPasseio.isChecked)
