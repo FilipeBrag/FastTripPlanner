@@ -49,8 +49,18 @@ class SegundaTelaActivity : AppCompatActivity() {
         btnVoltar = findViewById<Button>(R.id.btnVoltar)
 
         btnCalcular.setOnClickListener {
-            var valor = calcular()
+            var valorFinal = calcular()
 
+            val intent = Intent(this, TerceiraTelaActivity::class.java).apply {
+                putExtra("Valor Final",valorFinal)
+                putExtra("Dias",numeroDias)
+                putExtra("Orçamento",orcamento)
+                putExtra("Destino", destino)
+                putExtra("Hospedagem",rdHospedagem)
+                putExtra("Transporte",cbTransporte)
+                putExtra("Alimentção",cbTransporte)
+                putExtra("Passeios", cbPasseio)
+            }
         }
 
         btnVoltar.setOnClickListener { finish() }
