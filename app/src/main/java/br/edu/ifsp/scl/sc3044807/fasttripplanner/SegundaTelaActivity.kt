@@ -1,5 +1,6 @@
 package br.edu.ifsp.scl.sc3044807.fasttripplanner
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
@@ -47,9 +48,16 @@ class SegundaTelaActivity : AppCompatActivity() {
         btnCalcular = findViewById<Button>(R.id.btnCalcular)
         btnVoltar = findViewById<Button>(R.id.btnVoltar)
 
+        btnCalcular.setOnClickListener {
+            var valor = calcular()
+
+        }
+
+        btnVoltar.setOnClickListener { finish() }
+
     }
 
-    fun calcular(){
+    fun calcular(): Double {
         var custoBase: Double = numeroDias*orcamento;
 
         val hospedagem = when (rdHospedagem.checkedRadioButtonId){
