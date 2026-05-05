@@ -40,7 +40,6 @@ class SegundaTelaActivity : AppCompatActivity() {
         cbPasseio = findViewById<CheckBox>(R.id.cbPasseio)
         cbAlimentacao = findViewById<CheckBox>(R.id.cbAlimentacao)
 
-        tvHospedagem = findViewById<TextView>(R.id.tvHospedagem)
         rdHospedagem = findViewById<RadioGroup>(R.id.rdHospedagem)
 
         btnCalcular = findViewById<Button>(R.id.btnCalcular)
