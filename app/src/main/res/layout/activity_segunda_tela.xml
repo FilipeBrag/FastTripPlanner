@@ -1,107 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#3293a8"
     tools:context=".SegundaTelaActivity">
-
-    <Button
-        android:id="@+id/btnCalcular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Calcular"
-        tools:layout_editor_absoluteX="253dp"
-        tools:layout_editor_absoluteY="607dp" />
-
-    <Button
-        android:id="@+id/btnVoltar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Voltar"
-        tools:layout_editor_absoluteX="81dp"
-        tools:layout_editor_absoluteY="610dp" />
 
     <TextView
         android:id="@+id/tvTitulo2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Opções de viagem"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="116dp" />
+        android:layout_marginTop="32dp"
+        android:text="Opções de Viagem"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <CheckBox
-        android:id="@+id/cbTransporte"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Transporte"
-        tools:layout_editor_absoluteX="63dp"
-        tools:layout_editor_absoluteY="311dp" />
+        android:layout_marginTop="50dp"
+        android:layout_margin="24dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitulo2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <CheckBox
-        android:id="@+id/cbAlimentacao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Alimentação"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="388dp" />
-
-    <CheckBox
-        android:id="@+id/cbPasseio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Passeios"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="471dp" />
-
-    <RadioGroup
-        android:id="@+id/rdHospedagem"
-        android:layout_width="360dp"
-        android:layout_height="79dp"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="189dp">
-
-        <RadioButton
-            android:id="@+id/rbEconomica"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="39dp"
-            android:layout_marginEnd="21dp"
-            android:text="Econômica"
-            app:layout_constraintBaseline_toBaselineOf="@+id/rbConforto"
-            app:layout_constraintEnd_toStartOf="@+id/rbConforto"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <RadioButton
-            android:id="@+id/rbConforto"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
-            android:text="Conforto"
-            app:layout_constraintEnd_toStartOf="@+id/rbLuxo"
-            app:layout_constraintStart_toEndOf="@+id/rbEconomica"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitulo2" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
 
-        <RadioButton
-            android:id="@+id/rbLuxo"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginEnd="41dp"
-            android:text="Luxo"
-            app:layout_constraintBaseline_toBaselineOf="@+id/rbConforto"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/rbConforto" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Tipo de Hospedagem"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-    </RadioGroup>
+            <RadioGroup
+                android:id="@+id/rdHospedagem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvHospedagem"
-        android:layout_width="wrap_content"
+                <RadioButton
+                    android:id="@+id/rbEconomica"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Econômica"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/rbConforto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Conforto"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/rbLuxo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Luxo"
+                    android:textSize="16sp" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="#CCCCCC" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Serviços Extras"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/cbTransporte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transporte"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/cbAlimentacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alimentação"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/cbPasseio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Passeios"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnVoltar"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:text="Opções de Hospedagem"
-        tools:layout_editor_absoluteX="129dp"
-        tools:layout_editor_absoluteY="43dp" />
+        android:layout_marginBottom="32dp"
+        android:text="Voltar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="24dp"/>
+
+    <Button
+        android:id="@+id/btnCalcular"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Calcular"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="24dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
