@@ -27,7 +27,7 @@ Passeios: + R$ 120,00/dia
 
 # Demonstração
 Confira o vídeo de demonstração das funcionalidades do aplicativo:
-
+https://youtube.com/shorts/YUfjGBk738g?feature=share
 
 # Tecnologias Utilizadas
 Linguagem: Kotlin
