@@ -24,6 +24,7 @@ class TerceiraTelaActivity : AppCompatActivity() {
         val passeios = intent.getBooleanExtra("Passeios",false)
         val alimentacao = intent.getBooleanExtra("Alimentação",false)
         val transporte = intent.getBooleanExtra("Transporte",false)
+        val modoEco = intent.getStringExtra("Modo Econômico")
 
         //Conecta os textViews com as variaveis do codigo
         val tvDias = findViewById<TextView>(R.id.tvDias)

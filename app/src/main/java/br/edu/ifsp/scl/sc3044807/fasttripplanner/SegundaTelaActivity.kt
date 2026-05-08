@@ -2,6 +2,7 @@ package br.edu.ifsp.scl.sc3044807.fasttripplanner
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.MediaStore
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.RadioButton
@@ -23,6 +24,8 @@ class SegundaTelaActivity : AppCompatActivity() {
     private lateinit var tvHospedagem: TextView
     private lateinit var rdHospedagem: RadioGroup
 
+    private lateinit var rdModoEco: RadioGroup
+
     private lateinit var btnCalcular: Button
     private lateinit var btnVoltar: Button
 
@@ -37,10 +40,12 @@ class SegundaTelaActivity : AppCompatActivity() {
         destino = intent.getStringExtra("Destino").toString()
 
         cbTransporte = findViewById<CheckBox>(R.id.cbTransporte)
-        cbPasseio = findViewById<CheckBox>(R.id.cbPasseio)
+        cbPasseio = findViewById<CheckBox>(R.id.rbPasseio)
         cbAlimentacao = findViewById<CheckBox>(R.id.cbAlimentacao)
 
         rdHospedagem = findViewById<RadioGroup>(R.id.rdHospedagem)
+
+        rdModoEco = findViewById<RadioGroup>(R.id.rbModoEconomico)
 
         btnCalcular = findViewById<Button>(R.id.btnCalcular)
         btnVoltar = findViewById<Button>(R.id.btnVoltar)
@@ -53,6 +58,10 @@ class SegundaTelaActivity : AppCompatActivity() {
             val selectValue = findViewById<RadioButton>(selectedId)
             val nomeHospedagem = selectValue?.text?.toString() ?: "Economica"
 
+            val idMode = rdModoEco.checkedRadioButtonId
+            val valueMode = findViewById<RadioButton>(idMode)
+            val selectedMode = valueMode?.text?.toString() ?: "Modo Econômico"
+
             //Intent que vai passar os dados para a proxima tela, envia todos os dados previos e o valor final
             val intent = Intent(this, TerceiraTelaActivity::class.java).apply {
                 putExtra("Valor Final",valorFinal)
@@ -63,6 +72,7 @@ class SegundaTelaActivity : AppCompatActivity() {
                 putExtra("Transporte",cbTransporte.isChecked)
                 putExtra("Alimentação",cbTransporte.isChecked)
                 putExtra("Passeios", cbPasseio.isChecked)
+                putExtra("Modo Econômico",selectedMode)
             }
             startActivity(intent)
         }
@@ -79,7 +89,7 @@ class SegundaTelaActivity : AppCompatActivity() {
         outState.putInt("TipoHospedagem", rdHospedagem.checkedRadioButtonId)
         outState.putBoolean("Transporte", cbTransporte.isChecked)
         outState.putBoolean("Alimentação", cbAlimentacao.isChecked)
-        outState.putBoolean("Passeios", cbPasseio.isChecked)
+        outState.putInt("ModoEco",rdModoEco.checkedRadioButtonId)
     }
 
     //Função para atribuir os dados quando/se a página for recarregada
@@ -89,7 +99,7 @@ class SegundaTelaActivity : AppCompatActivity() {
         rdHospedagem.check(savedInstanceState.getInt("TipoHospedagem"))
         cbTransporte.isChecked = savedInstanceState.getBoolean("Transporte")
         cbAlimentacao.isChecked = savedInstanceState.getBoolean("Alimentação")
-        cbPasseio.isChecked = savedInstanceState.getBoolean("Passeios")
+        rdModoEco.check(savedInstanceState.getInt("ModoEco"))
     }
 
     //Função que usa a logica fornecida no slide, e retorna o valor final quando chamada
@@ -104,9 +114,17 @@ class SegundaTelaActivity : AppCompatActivity() {
             else -> 1.0
         }
 
-        custoBase *= hospedagem;
+        val idMode = rdModoEco.checkedRadioButtonId
+        val valueMode = findViewById<RadioButton>(idMode)
+        val selectedMode = valueMode?.text?.toString() ?: "Modo Econômico"
+
+        if(selectedMode != "Modo Econômico"){
+            custoBase *= hospedagem;
+        }
+
         if(cbTransporte.isChecked) custoBase += 300.0;
         if(cbAlimentacao.isChecked) custoBase += (50.0*numeroDias)
+        if(selectedMode == "Modo Econômico"){ custoBase *= 0.85 }
         if(cbPasseio.isChecked) custoBase += (120.0*numeroDias)
 
         return custoBase;

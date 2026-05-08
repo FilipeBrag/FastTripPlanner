@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         etOrcament = findViewById<EditText>(R.id.etOrcamento)
         bntAvancar = findViewById<Button>(R.id.buttonAvancar)
 
-        //Botom de avançar que ao ser clickado, deve chamar a função de verificar campos
+        //Botão de avançar que ao ser clickado, deve chamar a função de verificar campos
         bntAvancar.setOnClickListener {
             verificarCampos()
         }
